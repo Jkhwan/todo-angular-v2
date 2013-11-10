@@ -1,0 +1,131 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+div.list {
+	width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -5000;
+	background: url("../img/bg.gif") repeat-x center center fixed;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100%;
+	-o-background-size: 100%;
+
+	div#todo {
+		padding-top: 200px;
+		width: 60%;
+		margin: 0 auto;
+		i.fa-sort-amount-asc {
+			float: right;
+			margin-right: 10px;
+			padding: 2px;
+			width: 28px;
+			height: 28px;
+			border: 1px solid #000;
+			background-color: #FFF;
+			font-size: 20px;
+		}
+		ul {
+			padding-top: 0px;
+		}
+		li {
+			font-size: 25px;
+			height: 50px;
+			text-align: center;
+			line-height: 1em;
+			&.ui-sortable-helper {
+				height: 50px !important;
+			}
+			&.completed {
+				text-decoration: line-through;
+				color: red;
+			}
+			span.name.edit {
+				display: none;
+			}
+			input.itemTextbox {
+				display: inline-block;
+				text-align: center;
+				position: relative;
+				top: -4px;
+			}
+			i.fa-eraser {
+				float: right;
+				color: black;
+			}
+			i.fa-square-o, i.fa-check-square-o, i.fa-edit {
+				color: black;
+				float: left;
+				padding-top: 2px;
+				&.mouseover {
+					cursor: pointer;
+				}
+				&.edit {
+					color: red;
+				}
+			}
+		}
+	}
+}
+
+div#mainContainer {
+	padding: 0px;
+	margin: 0px;
+	.jumbotron.header {
+		padding-top: 18px;
+		padding-bottom: 28px;
+		background-color: #573208;
+		margin-bottom: 0px;
+	}
+
+	h1.title {
+		font-family: museo-slab,Georgia,"Times New Roman",Times,serif;
+		text-shadow: 4px 3px 0 #000,9px 8px 0 rgba(0,0,0,0.15);
+		text-align: center;
+		margin-top: 10px;
+		color: #F2EE6F;
+	}
+
+	form#addItem {
+		margin: 0 auto;
+		width: 300px;
+		input.addName {
+			width: 73%;
+		}
+		input#addBtn {
+			width: 25%;
+		}
+	}
+}
+

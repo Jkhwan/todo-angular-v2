@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>To Do List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/webfontkits.css">
+  <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body>
+  <div ng-cloak id="mainContainer" ng-controller="ToDoListCtrl">
+    <div class="jumbotron header">
+      <h1 class="title">To Do List</h1>
+      <form id="addItem">
+        <input type="text" class="addName" ng-model="newName">
+        <input id="addBtn" type="submit" value="Add" ng-click="addItem(newName)">
+      </form>
+    </div>  
+    <div class="list">
+      <div id="todo">
+        <ul class="list-group" ng-model="items" ui-sortable>
+          <li ng-repeat="item in items" class="list-group-item" ng-class="{'completed': item.completed}">
+            <i class="fa fa-fw fa-square-o" ng-hide="item.completed" ng-click="setCompletion(item)"></i>
+            <i class="fa fa-fw fa-check-square-o" ng-show="item.completed" ng-click="setCompletion(item)"></i>
+            <i ng-class="{'edit': item.editMode}" class="fa fa-fw fa-edit" ng-click="editItem(item)"></i>
+            <span ng-hide="item.editMode" class="name" ng-bind="item.name"></span>
+            <input type="text" class="itemTextbox" ng-show="item.editMode" value="{{ item.name }}" ng-model="item.name">
+            <i class="fa fa-fw fa-eraser" ng-click="removeItem(item)"></i>
+          </li>
+          <li ng-show="newName" class="list-group-item">
+            <span style="margin-left: 30px" ng-bind="newName"></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="pubnub"
+      pub-key="pub-c-5a3feb16-42a3-4f88-b419-e7827b73ab4e"
+      sub-key="sub-c-a207588c-4a56-11e3-b088-02ee2ddab7fe"
+      ssl="off" origin="pubsub.pubnub.com"/>
+    </div>
+  </div>
+  <script src="lib/jquery-1.10.2.min.js"></script>
+  <script src="lib/jquery-ui.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/bootstrap.min.js"></script>
+  <script src="http://cdn.pubnub.com/pubnub-3.5.47.min.js"></script>
+  <script src="lib/angular/angular-route.js"></script>
+  <script src="js/directives/sortable.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers/ToDoListCtrl.js"></script>
+</body>
+</html>

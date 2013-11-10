@@ -1,0 +1,79 @@
+div.list {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -5000;
+  background: url("../img/bg.gif") repeat-x center center fixed;
+  background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%; }
+  div.list div#todo {
+    padding-top: 200px;
+    width: 500px;
+    margin: 0 auto; }
+    div.list div#todo i.fa-sort-amount-asc {
+      float: right;
+      margin-right: 10px;
+      padding: 2px;
+      width: 28px;
+      height: 28px;
+      border: 1px solid #000;
+      background-color: #FFF;
+      font-size: 20px; }
+    div.list div#todo ul {
+      padding-top: 35px; }
+    div.list div#todo li {
+      font-size: 25px;
+      height: 50px;
+      text-align: center;
+      line-height: 1em; }
+      div.list div#todo li.completed {
+        text-decoration: line-through;
+        color: red; }
+      div.list div#todo li span.name.edit {
+        display: none; }
+      div.list div#todo li input.itemTextbox {
+        display: inline-block;
+          text-align: center;
+          position: relative;
+          top: -4px;  }
+        div.list div#todo li input.itemTextbox.edit {
+          display: inline-block;
+          text-align: center;
+          position: relative;
+          top: -4px; }
+      div.list div#todo li i.fa-eraser {
+        float: right;
+        color: black; }
+      div.list div#todo li i.fa-square-o, div.list div#todo li i.fa-check-square-o, div.list div#todo li i.fa-edit {
+        color: black;
+        float: left;
+        padding-top: 2px; }
+        div.list div#todo li i.fa-square-o.mouseover, div.list div#todo li i.fa-check-square-o.mouseover, div.list div#todo li i.fa-edit.mouseover {
+          cursor: pointer; }
+        div.list div#todo li i.fa-square-o.edit, div.list div#todo li i.fa-check-square-o.edit, div.list div#todo li i.fa-edit.edit {
+          color: red; }
+
+.jumbotron.header {
+  padding-top: 18px;
+  padding-bottom: 28px;
+  background-color: #573208;
+  margin-bottom: 0px; }
+
+h1.title {
+  font-family: museo-slab,Georgia,"Times New Roman",Times,serif;
+  text-shadow: 4px 3px 0 black, 9px 8px 0 rgba(0, 0, 0, 0.15);
+  text-align: center;
+  margin-top: 10px;
+  color: #F2EE6F; }
+
+form#addEntry {
+  margin: 0 auto;
+  width: 300px; }
+  form#addEntry input.add {
+    width: 73%; }
+  form#addEntry input#addBtn {
+    width: 25%; }

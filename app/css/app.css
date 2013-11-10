@@ -1,0 +1,101 @@
+/* app css stylesheet */
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em; }
+
+.menu:before {
+  content: "["; }
+
+.menu:after {
+  content: "]"; }
+
+.menu > li {
+  display: inline; }
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em; }
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0; }
+
+div.list {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -5000;
+  background: url("../img/bg.gif") repeat-x center center fixed;
+  background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%; }
+  div.list div#todo {
+    padding-top: 200px;
+    width: 60%;
+    margin: 0 auto; }
+    div.list div#todo i.fa-sort-amount-asc {
+      float: right;
+      margin-right: 10px;
+      padding: 2px;
+      width: 28px;
+      height: 28px;
+      border: 1px solid #000;
+      background-color: #FFF;
+      font-size: 20px; }
+    div.list div#todo ul {
+      padding-top: 0px; }
+    div.list div#todo li {
+      font-size: 25px;
+      height: 50px;
+      text-align: center;
+      line-height: 1em; }
+      div.list div#todo li.ui-sortable-helper {
+        height: 50px !important; }
+      div.list div#todo li.completed {
+        text-decoration: line-through;
+        color: red; }
+      div.list div#todo li span.name.edit {
+        display: none; }
+      div.list div#todo li input.itemTextbox {
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        top: -4px; }
+      div.list div#todo li i.fa-eraser {
+        float: right;
+        color: black; }
+      div.list div#todo li i.fa-square-o, div.list div#todo li i.fa-check-square-o, div.list div#todo li i.fa-edit {
+        color: black;
+        float: left;
+        padding-top: 2px; }
+        div.list div#todo li i.fa-square-o.mouseover, div.list div#todo li i.fa-check-square-o.mouseover, div.list div#todo li i.fa-edit.mouseover {
+          cursor: pointer; }
+        div.list div#todo li i.fa-square-o.edit, div.list div#todo li i.fa-check-square-o.edit, div.list div#todo li i.fa-edit.edit {
+          color: red; }
+
+div#mainContainer {
+  padding: 0px;
+  margin: 0px; }
+  div#mainContainer .jumbotron.header {
+    padding-top: 18px;
+    padding-bottom: 28px;
+    background-color: #573208;
+    margin-bottom: 0px; }
+  div#mainContainer h1.title {
+    font-family: museo-slab,Georgia,"Times New Roman",Times,serif;
+    text-shadow: 4px 3px 0 black, 9px 8px 0 rgba(0, 0, 0, 0.15);
+    text-align: center;
+    margin-top: 10px;
+    color: #F2EE6F; }
+  div#mainContainer form#addItem {
+    margin: 0 auto;
+    width: 300px; }
+    div#mainContainer form#addItem input.addName {
+      width: 73%; }
+    div#mainContainer form#addItem input#addBtn {
+      width: 25%; }
